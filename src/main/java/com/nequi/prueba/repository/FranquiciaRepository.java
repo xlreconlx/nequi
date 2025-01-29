@@ -12,4 +12,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author ander
  */
 public interface FranquiciaRepository extends JpaRepository<Franquicia, Long>{
+    public Franquicia findByIdFranquicia(Long idTarea);
 }

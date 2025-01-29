@@ -10,30 +10,35 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.time.LocalDate;
 
 /**
  *
  * @author ander
  */
 @Entity
-@Table(name = "franquicia")
-public class Franquicia {
+@Table(name = "producto")
+public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idFranquicia")
-    private Long idFranquicia;
+    @Column(name = "idProducto")
+    private Long idProducto;
 
     @Column(name = "nombre")
     private String nombre;
 
-    public Long getIdFranquicia() {
-        return idFranquicia;
+    @Column(name = "stock")
+    private int stock;
+
+    @Column(name = "idSucursal")
+    private Long idSucursal;
+
+    public Long getIdProducto() {
+        return idProducto;
     }
 
-    public void setIdFranquicia(Long idFranquicia) {
-        this.idFranquicia = idFranquicia;
+    public void setIdProducto(Long idProducto) {
+        this.idProducto = idProducto;
     }
 
     public String getNombre() {
@@ -43,5 +48,21 @@ public class Franquicia {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public Long getIdSucursal() {
+        return idSucursal;
+    }
+
+    public void setIdSucursal(Long idSucursal) {
+        this.idSucursal = idSucursal;
+    }
+
 }
