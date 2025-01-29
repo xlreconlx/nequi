@@ -17,20 +17,33 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SucursalService {
+
     @Autowired
     private SucursalRepository sucursalRepository;
-    private FranquiciaRepository franquiciaRepository;
     
-    public Sucursal addSucursal(Long franquiciaId, Sucursal sucursal) {
-        Franquicia franquicia = franquiciaRepository.findByIdFranquicia(franquiciaId);
-        if(franquicia == null){
+    @Autowired
+    private FranquiciaRepository franquiciaRepository;
+
+    public Sucursal addSucursal(Long idFranquicia, Sucursal sucursal) {
+        Franquicia franquicia = franquiciaRepository.findByIdFranquicia(idFranquicia);
+        if (franquicia == null) {
             return null;
         }
+        sucursal.setIdFranquicia(franquicia.getIdFranquicia());
         return sucursalRepository.save(sucursal);
     }
-    
-    public Sucursal updateFranquicia(Sucursal sucursal) {
+
+    public Sucursal updateSucursal(Sucursal sucursal) {
         return sucursalRepository.save(sucursal);
     }
-    
+
+    public Sucursal updateNombreSucursal(Long idSucursal, Sucursal sucursal) {
+        Sucursal sucursalSearch = sucursalRepository.getSucursalByIdSucursal(idSucursal);
+        if (sucursalSearch == null) {
+            return null;
+        }
+        sucursalSearch.setNombre(sucursal.getNombre());
+        return sucursalRepository.save(sucursalSearch);
+    }
+
 }

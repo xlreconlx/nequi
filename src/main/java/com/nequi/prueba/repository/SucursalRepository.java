@@ -14,4 +14,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface SucursalRepository extends JpaRepository<Sucursal, Long>{
     public List<Sucursal> getAllSucursalByIdFranquicia(Long idFranquicia);
+    public Sucursal getSucursalByIdSucursal(Long idSucursal);
 }

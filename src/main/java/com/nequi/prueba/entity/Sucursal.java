@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
  * @author ander
  */
 @Entity
-@Table(name = "franquicia")
+@Table(name = "sucursal")
 public class Sucursal {
 
     @Id
