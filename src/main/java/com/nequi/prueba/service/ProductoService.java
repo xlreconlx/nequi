@@ -55,7 +55,7 @@ public class ProductoService {
 
         for (Sucursal sucursal : sucursales) {
             List<Producto> productos = productoRepository.findByIdSucursal(sucursal.getIdSucursal());
-
+                       
             if (productos.isEmpty()) {
                 continue;
             }

@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author ander
  */
 public interface ProductoRepository extends JpaRepository<Producto, Long>{
-    public List<Producto> findByIdSucursal(Long sucursalId);
+    public List<Producto> findByIdSucursal(Long idSucursal);
 }
