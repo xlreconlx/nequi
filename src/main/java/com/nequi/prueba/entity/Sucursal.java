@@ -26,11 +26,10 @@ public class Sucursal {
 
     @Column(name = "nombre")
     private String nombre;
-    
+
     @Column(name = "idFranquicia")
     private Long idFranquicia;
-    
-    @Column(name = "idSucursal")
+
     public Long getIdSucursal() {
         return idSucursal;
     }
@@ -54,5 +53,5 @@ public class Sucursal {
     public void setIdFranquicia(Long idFranquicia) {
         this.idFranquicia = idFranquicia;
     }
-     
+
 }

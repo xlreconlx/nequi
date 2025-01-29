@@ -45,7 +45,7 @@ public class FranquiciaController {
     }
     
     @PutMapping("/{idFranquicia}")
-    public ResponseEntity<?> updateTarea(@PathVariable Long idFranquicia, @RequestBody Franquicia franquicia) {
+    public ResponseEntity<?> updateFranquicia(@PathVariable Long idFranquicia, @RequestBody Franquicia franquicia) {
         Franquicia oldFranquicia = franquiciaService.getFranquiciaById(idFranquicia);
         if (oldFranquicia != null) {
             oldFranquicia.setNombre(franquicia.getNombre());

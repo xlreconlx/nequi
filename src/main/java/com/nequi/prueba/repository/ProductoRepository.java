@@ -4,7 +4,7 @@
  */
 package com.nequi.prueba.repository;
 
-import com.nequi.prueba.entity.Sucursal;
+import com.nequi.prueba.entity.Producto;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author ander
  */
-public interface SucursalRepository extends JpaRepository<Sucursal, Long>{
-    public List<Sucursal> getAllSucursalByIdFranquicia(Long idFranquicia);
+public interface ProductoRepository extends JpaRepository<Producto, Long>{
+    public List<Producto> findByIdSucursal(Long sucursalId);
 }
